@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="./vue/vue.js"></script>
+	<script src="./vue/konva.js"></script>
+	<style type="text/css">
+	* {margin: 0; padding: 0;}
+	#container {height: 100%; width:100%; font-size: 0;}
+	#figure {width: 985px;min-width: 985px;max-width: 985px;}
+	#menu {}
+	.topDiv{
+       position:absolute;
+       top:10px;
+       width: 90%;
+       height: 90%;    
+       left:50px;
+       float: left;
+    }
+	</style>
+    <meta charset="utf-8" />
+    <title>富宇文匯停車場指引</title>
+</head>
+<body>
+	<div id="container" >
+		<div id="figure" @click="pop($event)"></div>
+		<div id="menu" class="topDiv">
+			<select v-model="select_car" style="font-size:22px;">
+   				<option value="" disabled selected>選擇汽車位</option>
+				<option v-for="(r,index) in sorted_car_name" :value="r">{{r}}</option>
+			</select>
+			<select v-model="select_motor" style="font-size:22px;">
+   				<option value="" disabled selected>選擇機車位</option>
+				<option v-for="(r,index) in sorted_motor_name" :value="r">{{r}}</option>
+			</select>
+			<button style="margin-left: 100px;font-size:22px"  @click="getDataUrl">儲存圖片</button>
+		</div>
+		
+	</div>
+    
+    
+    
+    
+    <script src="./vue/main.js"></script>
+</body>
+</html>
